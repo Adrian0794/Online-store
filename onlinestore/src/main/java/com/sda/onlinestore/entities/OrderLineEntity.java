@@ -12,6 +12,7 @@ public class OrderLineEntity {
     private double quantityOfProducts;
     private double productPrice;
 
+
     public Integer getOrderLineId() {
         return orderLineId;
     }

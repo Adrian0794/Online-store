@@ -1,76 +1,52 @@
 package com.sda.onlinestore.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name ="comanda")
 public class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer comandaId;
-    public String userName;
-    public double totalCost;
-    public String deliveryAdress;
-    public String userAdress;
-    public double dateOfOrder;
-    public Integer orderLines;
-    public String costumer;
-    public String status;
+    private Integer comandaId;
 
-    public Integer getOrderId() {
+    private Integer totalCost;
+    private Integer dateOfOrder;
+    private String costumer;
+    private String status;
+
+    @OneToOne
+    private AddressEntity deliveryAdress;
+
+    @OneToOne
+    private UserAccountEntity userAccount;
+
+
+    @OneToMany
+    private List<OrderLineEntity> orderLines;
+
+    public Integer getComandaId() {
         return comandaId;
     }
 
-    public void setOrderId(Integer orderId) {
-        this.comandaId = orderId;
+    public void setComandaId(Integer comandaId) {
+        this.comandaId = comandaId;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public double getTotalCost() {
+    public Integer getTotalCost() {
         return totalCost;
     }
 
-    public void setTotalCost(double totalCost) {
+    public void setTotalCost(Integer totalCost) {
         this.totalCost = totalCost;
     }
 
-    public String getDeliveryAdress() {
-        return deliveryAdress;
-    }
-
-    public void setDeliveryAdress(String deliveryAdress) {
-        this.deliveryAdress = deliveryAdress;
-    }
-
-    public String getUserAdress() {
-        return userAdress;
-    }
-
-    public void setUserAdress(String userAdress) {
-        this.userAdress = userAdress;
-    }
-
-    public double getDateOfOrder() {
+    public Integer getDateOfOrder() {
         return dateOfOrder;
     }
 
-    public void setDateOfOrder(double dateOfOrder) {
+    public void setDateOfOrder(Integer dateOfOrder) {
         this.dateOfOrder = dateOfOrder;
-    }
-
-    public Integer getOrderLines() {
-        return orderLines;
-    }
-
-    public void setOrderLines(Integer orderLines) {
-        this.orderLines = orderLines;
     }
 
     public String getCostumer() {
@@ -87,5 +63,29 @@ public class OrderEntity {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public AddressEntity getDeliveryAdress() {
+        return deliveryAdress;
+    }
+
+    public void setDeliveryAdress(AddressEntity deliveryAdress) {
+        this.deliveryAdress = deliveryAdress;
+    }
+
+    public UserAccountEntity getUserAccount() {
+        return userAccount;
+    }
+
+    public void setUserAccount(UserAccountEntity userAccount) {
+        this.userAccount = userAccount;
+    }
+
+    public List<OrderLineEntity> getOrderLines() {
+        return orderLines;
+    }
+
+    public void setOrderLines(List<OrderLineEntity> orderLines) {
+        this.orderLines = orderLines;
     }
 }
