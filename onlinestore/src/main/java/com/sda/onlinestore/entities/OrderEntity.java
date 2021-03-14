@@ -15,6 +15,7 @@ public class OrderEntity {
     private String costumer;
     private String status;
 
+
     @OneToOne
     private AddressEntity deliveryAdress;
 
@@ -75,16 +76,5 @@ public class OrderEntity {
     public UserAccountEntity getUserAccount() {
         return userAccount;
     }
-
-    public void setUserAccount(UserAccountEntity userAccount) {
-        this.userAccount = userAccount;
-    }
-
-    public List<OrderLineEntity> getOrderLines() {
-        return orderLines;
-    }
-
-    public void setOrderLines(List<OrderLineEntity> orderLines) {
-        this.orderLines = orderLines;
-    }
 }
+
