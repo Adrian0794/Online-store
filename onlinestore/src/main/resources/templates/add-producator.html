@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Producator</title>
+</head>
+<body>
+<form action="#" th:action="@{/productor/add}" th:object="${newProducator}" method="post">
+    <table border="1">
+        <tr>
+            <td><label> firstName</label></td>
+            <td><input type="text" th:field="*{firstname}"/></td>
+        </tr>
+        <tr>
+            <td><label>lastName</label></td>
+            <td><input type="text" th:field="*{lastname}"/></td>
+        </tr>
+            <td><input type="submit" value="Submit"/></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
