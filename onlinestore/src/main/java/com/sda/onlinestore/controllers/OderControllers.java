@@ -7,6 +7,7 @@ import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -17,21 +18,21 @@ public class OderControllers {
     @Autowired
     private OrderService orderService;
 
-    @GetMapping(path = getOrder)
+    @GetMapping(path = "getOrder")
     public String getOrder( Model model){
         List<OrderEntity> orderList = orderService.getAllOrders();
         model.addAttribute("order",orderList);
         return "order";
     }
 
-    @GetMapping(path = add-order)
+    @GetMapping(path = "add-order")
     public String addOrderPage(Model model){
         model.addAttribute("newOrder", new OrderEntity());
         return "add-order";
     }
 
     @PostMapping(path = "order/add")
-    public String addOrder(@ManagedAttribute OrderEntity newOrder){
+    public String addOrder(@ModelAttribute OrderEntity newOrder){
         orderService.addOrder(newOrder);
         return "redirect://getOrder";
     }
