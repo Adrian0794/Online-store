@@ -1,4 +1,4 @@
-package com.sda.onlinestore.controller;
+package com.sda.onlinestore.controllers;
 
 import com.sda.onlinestore.entities.ProductEntity;
 import com.sda.onlinestore.servicies.ProductService;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
-public class ProductController {
+public class ProductControllers {
     @Autowired
     private ProductService productService;
 

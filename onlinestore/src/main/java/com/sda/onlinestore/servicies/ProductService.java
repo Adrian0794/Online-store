@@ -1,6 +1,7 @@
 package com.sda.onlinestore.servicies;
 
 import com.sda.onlinestore.entities.CategoryEntity;
+import com.sda.onlinestore.entities.ProducatorEntity;
 import com.sda.onlinestore.entities.ProductEntity;
 import com.sda.onlinestore.repositories.ProducatorRepository;
 import com.sda.onlinestore.repositories.ProductRepository;
@@ -34,4 +35,7 @@ public class ProductService {
         productRepository.save(editProduct);
     }
 
+    public List<ProductEntity> getAllProducts() {
+        return productRepository.findAll();
+    }
 }
