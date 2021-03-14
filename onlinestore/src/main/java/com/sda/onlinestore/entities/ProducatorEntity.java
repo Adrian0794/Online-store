@@ -1,6 +1,7 @@
 package com.sda.onlinestore.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="producator")
@@ -10,6 +11,17 @@ public class ProducatorEntity {
     private Integer producatorId;
     private String firstName;
     private String lastName;
+
+    @OneToMany
+    private List<ProductEntity> product;
+
+    public List<ProductEntity> getProduct() {
+        return product;
+    }
+
+    public void setProduct(List<ProductEntity> product) {
+        this.product = product;
+    }
 
     public Integer getProducatorId() {
         return producatorId;

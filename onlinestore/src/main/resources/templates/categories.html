@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>Category_page</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Handmade category</th>
+    </tr>
+    <tr th:each="c.${categoryList}">
+        <td th:text="${c.categoryName}}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -14,13 +14,21 @@ public class ProductEntity {
     private String thumbnail;
     private String categoryEntity;
     private double price;
-    private enum productType{
+
+    private enum productType {
         NUMEDINFETRUPERSONALIZATE,
         NUMEDINFETRUSIMPLE,
         ANIMALUTECROSETATE,
         GHIOZDANALE,
     }
-    private String producator;
+
+    @ManyToOne
+    @JoinColumn(name = "categoryId")
+    private CategoryEntity category;
+
+    @ManyToOne
+    @JoinColumn(name = "producatorId")
+    private ProducatorEntity producator;
 
     public Integer getProductId() {
         return productId;
@@ -70,11 +78,20 @@ public class ProductEntity {
         this.price = price;
     }
 
-    public String getProducator() {
+    public CategoryEntity getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryEntity category) {
+        this.category = category;
+    }
+
+    public ProducatorEntity getProducator() {
         return producator;
     }
 
-    public void setProducator(String producator) {
+    public void setProducator(ProducatorEntity producator) {
         this.producator = producator;
     }
 }
+

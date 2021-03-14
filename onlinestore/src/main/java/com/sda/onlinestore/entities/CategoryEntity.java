@@ -1,6 +1,7 @@
 package com.sda.onlinestore.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="category")
@@ -9,6 +10,9 @@ public class CategoryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer categoryId;
     private String categoryName;
+
+    @OneToMany(mappedBy = "category")
+    private List<ProductEntity> products;
 
     public Integer getCategoryId() {
         return categoryId;
@@ -24,5 +28,13 @@ public class CategoryEntity {
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
+    }
+
+    public List<ProductEntity> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<ProductEntity> products) {
+        this.products = products;
     }
 }

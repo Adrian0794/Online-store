@@ -11,10 +11,9 @@ public class UserAccountEntity {
     private String username;
     private String password;
     private Boolean enable;
-    private String city;
-    private String address;
-    private String logotype;
-    private String channelCom;
+
+    @OneToOne
+    private AddressEntity address;
 
     public Integer getUserId() {
         return userId;
@@ -48,35 +47,11 @@ public class UserAccountEntity {
         this.enable = enable;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getAddress() {
+    public AddressEntity getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(AddressEntity address) {
         this.address = address;
-    }
-
-    public String getLogotype() {
-        return logotype;
-    }
-
-    public void setLogotype(String logotype) {
-        this.logotype = logotype;
-    }
-
-    public String getChannelCom() {
-        return channelCom;
-    }
-
-    public void setChannelCom(String channelCom) {
-        this.channelCom = channelCom;
     }
 }
