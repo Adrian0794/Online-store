@@ -4,12 +4,11 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name ="comanda")
+@Table(name = "comanda")
 public class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer comandaId;
-
     private Integer totalCost;
     private Integer dateOfOrder;
     private String costumer;
@@ -87,4 +86,5 @@ public class OrderEntity {
     public void setOrderLines(List<OrderLineEntity> orderLines) {
         this.orderLines = orderLines;
     }
+
 }
