@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Order</title>
+</head>
+<body>
+<p>Add order</p>
+<form action="#" th:action="@{/product/add}" th:object="${newProduct}" method="post">
+    <table border="1">
+        <tr>
+            <td><label> TotalCost</label></td>
+            <td><input type="double" th:field="*{totalCost}" /></td>
+        </tr>
+        <tr>
+            <td><label>DateOfOrder</label></td>
+            <td><input type="date" th:field="*{dateOfOder}" /></td>
+        </tr>
+        <tr>
+            <td><label>Costumer</label></td>
+            <td><input type="text" th:field="*{name}" /></td>
+        </tr>
+        <td><label>Status</label></td>
+        <td><input type="text" th:field="*{Status}" /></td>
+        <tr>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
