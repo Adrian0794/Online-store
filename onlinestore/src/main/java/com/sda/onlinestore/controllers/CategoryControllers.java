@@ -20,13 +20,13 @@ public class CategoryControllers {
     public String getCategory(Model model) {
         List<CategoryEntity> categoryList = categoryService.getAllCategory();
         model.addAttribute("category", categoryList);
-        return "category";
+        return "categories";
     }
 
     @GetMapping(path = "add-category")
     public String addCategory(Model model) {
         model.addAttribute("newCategory", new CategoryEntity());
-        return "add-category";
+        return "add-categories";
     }
     @PostMapping(path = "category/add")
     public String addCategory(@ModelAttribute CategoryEntity newCategory){

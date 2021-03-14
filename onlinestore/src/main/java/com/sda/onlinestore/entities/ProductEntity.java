@@ -15,6 +15,8 @@ public class ProductEntity {
     private String categoryEntity;
     private double price;
 
+    private productType type;
+
     private enum productType {
         NUMEDINFETRUPERSONALIZATE,
         NUMEDINFETRUSIMPLE,

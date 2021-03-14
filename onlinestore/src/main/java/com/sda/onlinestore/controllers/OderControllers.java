@@ -25,15 +25,4 @@ public class OderControllers {
         return "order";
     }
 
-    @GetMapping(path = "add-order")
-    public String addOrderPage(Model model){
-        model.addAttribute("newOrder", new OrderEntity());
-        return "add-order";
-    }
-
-    @PostMapping(path = "order/add")
-    public String addOrder(@ModelAttribute OrderEntity newOrder){
-        orderService.addOrder(newOrder);
-        return "redirect://getOrder";
-    }
 }

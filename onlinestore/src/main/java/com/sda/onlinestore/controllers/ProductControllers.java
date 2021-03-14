@@ -19,7 +19,7 @@ public class ProductControllers {
     @GetMapping(path ="getProduct")
     public String getProduct( Model model) {
         List<ProductEntity> productList = productService.getAllProducts();
-        model.addAttribute("product", productList);
+        model.addAttribute("products", productList);
         return "product";
     }
 

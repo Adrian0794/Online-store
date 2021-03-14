@@ -5,9 +5,11 @@
     <title>Title</title>
 </head>
 <body>
+<table>
 <li th:each="product: ${products}">
-    <p th:text="${product.name}"/>
+    <p th:text="${product.title}"/>
+    <p th:text="${product.price}"/>
 </li>
-
+</table>
 </body>
 </html>
