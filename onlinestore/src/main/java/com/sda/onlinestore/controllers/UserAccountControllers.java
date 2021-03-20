@@ -21,13 +21,13 @@ public class UserAccountControllers {
     public String getUserAccount(Model model){
         List<UserAccountEntity> userAccountList = userAccountService.userAccountAllList();
         model.addAttribute("userAccounts", userAccountList );
-        return "userAccount";
+        return "useraccount";
     }
 
     @GetMapping(path = "add-user")
     public String addUserAccountPage(Model model){
         model.addAttribute("newUserAccount", new UserAccountEntity());
-        return "add-userAccount";
+        return "add-useraccount";
     }
     @PostMapping(path = "userAccount/add")
     public String addUserAccount(@ModelAttribute UserAccountEntity newUserAccount){

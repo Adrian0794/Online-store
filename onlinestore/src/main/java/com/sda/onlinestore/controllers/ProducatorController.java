@@ -18,8 +18,8 @@ public class ProducatorController {
 
     @GetMapping(path = "getProducator")
     public String getProducator(Model model) {
-        List<ProducatorEntity> producatorEntityList = producatorService.producatorList();
-        model.addAttribute("pruducatori");
+        List<ProducatorEntity> producatorList = producatorService.producatorList();
+        model.addAttribute("producatori");
         return "producator";
     }
 
@@ -29,6 +29,7 @@ public class ProducatorController {
         return "add-producator";
     }
 
+    @GetMapping(path = "producator/add")
     public String addProducator(@ModelAttribute ProducatorEntity newProducator){
         producatorService.addProducator(newProducator);
         return "redirect:/getProducator";

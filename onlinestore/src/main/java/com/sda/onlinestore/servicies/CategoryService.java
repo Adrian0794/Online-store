@@ -28,8 +28,14 @@ public class CategoryService {
         categoryRepository.deleteById(id);
     }
 
+<<<<<<< HEAD
     public void editCategory(CategoryEntity editedCategory) {
         categoryRepository.save(editedCategory);
+=======
+    public CategoryEntity getCatedoryById(Integer id) {
+       categoryRepository.findById(id);
+        return null;
+>>>>>>> bbd332d66bba8d18f887753d6836c0d0fb847949
     }
 
 }
