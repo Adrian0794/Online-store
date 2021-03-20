@@ -30,14 +30,22 @@ public class CategoryControllers {
         model.addAttribute("newCategory", new CategoryEntity());
         return "add-categories";
     }
+
     @PostMapping(path = "category/add")
-    public String addCategory(@ModelAttribute CategoryEntity newCategory){
+    public String addCategory(@ModelAttribute CategoryEntity newCategory) {
         categoryService.addCategory(newCategory);
         return "redirect:/getCategory";
     }
+
     @GetMapping(path = "edit-category/{id}")
-    public String editCategory(Model model, @PathParam("id") int id){
+    public String editCategory(Model model, @PathParam("id") Integer id) {
         CategoryEntity categoryEntity = categoryService.getCatedoryById(id);
         return "edit-category";
     }
+
+    @PostMapping(path = "category/edit")
+    public String editCategory(@ModelAttribute CategoryEntity categoryEntity) {
+        categoryService.editCategory();
+    }
+
 }

@@ -8,11 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
 @Controller
-public class AddressControllers {
+public class  AddressControllers {
     @Autowired
     private AddressService addressService;
 
@@ -21,6 +23,19 @@ public class AddressControllers {
         List<AddressEntity> addressList = addressService.addressAllList();
         model.addAttribute("address", addressList);
         return "address";
+    }
+
+    @GetMapping(path ="add-address")
+    public String addAddress(Model model){
+        model.addAttribute("newAddress", new AddressEntity());
+        return "add-address";
+    }
+
+    @PostMapping(path = "address/add")
+    public String addAddress(@ModelAttribute AddressEntity newAdress)
+    {
+        addressService.addAddress(newAdress);
+        return "rediresct:/getAddress";
     }
 
 }

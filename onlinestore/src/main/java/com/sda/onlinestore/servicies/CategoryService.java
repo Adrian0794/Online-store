@@ -12,6 +12,10 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
+    public void getCatedoryById(Integer id) {
+        categoryRepository.findById(id);
+    }
+
     public void addCategory(CategoryEntity newCategory) {
         categoryRepository.save(newCategory);
     }
@@ -24,7 +28,8 @@ public class CategoryService {
         categoryRepository.deleteById(id);
     }
 
-    public void getCatedoryById(Integer id) {
-       categoryRepository.findById(id);
+    public void editCategory(CategoryEntity editedCategory) {
+        categoryRepository.save(editedCategory);
     }
+
 }
