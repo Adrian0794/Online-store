@@ -8,7 +8,10 @@
 <table>
 <li th:each="product: ${products}">
     <p th:text="${product.title}"/>
+    <p th:text="${product.description}"/>
     <p th:text="${product.price}"/>
+
+    <a th:href="@{/edit-product/{id}(id = ${product.productId})}"><button>Edit</button></a>
 </li>
 </table>
 </body>
