@@ -19,8 +19,8 @@ public class CategoryControllers {
     @GetMapping(path = "getCategory")
     public String getCategory(Model model) {
         List<CategoryEntity> categoryList = categoryService.getAllCategory();
-        model.addAttribute("category", categoryList);
-        return "category";
+        model.addAttribute("categories", categoryList);
+        return "categories";
     }
 
     @GetMapping(path = "add-category")
