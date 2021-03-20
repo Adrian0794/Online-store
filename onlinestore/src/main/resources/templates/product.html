@@ -6,12 +6,15 @@
 </head>
 <body>
 <table>
+    <a th:href="@{/add-product}"><button>Add product</button></a>
 <li th:each="product: ${products}">
+    <p th:text="${product.productId}"/>
     <p th:text="${product.title}"/>
     <p th:text="${product.description}"/>
     <p th:text="${product.price}"/>
 
     <a th:href="@{/edit-product/{id}(id = ${product.productId})}"><button>Edit</button></a>
+    <a th:href="@{/delete-product/{id}(id = ${product.productId})}"><button>Delete</button></a>
 </li>
 </table>
 </body>
