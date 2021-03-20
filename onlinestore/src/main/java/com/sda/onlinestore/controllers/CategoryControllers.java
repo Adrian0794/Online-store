@@ -21,7 +21,6 @@ public class CategoryControllers {
     public String getCategory(Model model) {
         List<CategoryEntity> categoryList = categoryService.getAllCategory();
         model.addAttribute("categories", categoryList);
-        model.addAttribute("category", categoryList);
         return "categories";
     }
 

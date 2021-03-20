@@ -19,7 +19,7 @@ public class ProducatorController {
     @GetMapping(path = "getProducator")
     public String getProducator(Model model) {
         List<ProducatorEntity> producatorList = producatorService.producatorList();
-        model.addAttribute("producatori");
+        model.addAttribute("producatori",producatorList);
         return "producator";
     }
 
