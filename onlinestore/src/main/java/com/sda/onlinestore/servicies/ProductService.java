@@ -1,22 +1,22 @@
 package com.sda.onlinestore.servicies;
 
-import com.sda.onlinestore.entities.CategoryEntity;
-import com.sda.onlinestore.entities.ProducatorEntity;
 import com.sda.onlinestore.entities.ProductEntity;
-import com.sda.onlinestore.repositories.ProducatorRepository;
 import com.sda.onlinestore.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public void getProduct(ProductEntity newProduct) {
-        this.productRepository = productRepository;
+    public ProductEntity getProduct(Integer id) {
+        Optional<ProductEntity> productEntityOptional = productRepository.findById(id);
+        ProductEntity productEntity = productEntityOptional.get();
+        return productEntity;
     }
 
     public void addProduct(ProductEntity newProduct) {
