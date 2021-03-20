@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class ProducatorController {
         return "add-producator";
     }
 
-    @GetMapping(path = "producator/add")
+    @PostMapping(path = "producator/add")
     public String addProducator(@ModelAttribute ProducatorEntity newProducator){
         producatorService.addProducator(newProducator);
         return "redirect:/getProducator";

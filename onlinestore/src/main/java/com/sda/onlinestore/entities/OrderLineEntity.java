@@ -8,6 +8,7 @@ public class OrderLineEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer orderLineId;
+    
     private String product;
     private double quantityOfProducts;
     private double productPrice;

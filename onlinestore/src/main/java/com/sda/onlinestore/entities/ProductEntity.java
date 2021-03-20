@@ -12,9 +12,7 @@ public class ProductEntity {
     private String title;
     private String description;
     private String thumbnail;
-    private String categoryEntity;
     private double price;
-
     private productType type;
 
     private enum productType {
@@ -64,13 +62,6 @@ public class ProductEntity {
         this.thumbnail = thumbnail;
     }
 
-    public String getCategoryEntity() {
-        return categoryEntity;
-    }
-
-    public void setCategoryEntity(String categoryEntity) {
-        this.categoryEntity = categoryEntity;
-    }
 
     public double getPrice() {
         return price;

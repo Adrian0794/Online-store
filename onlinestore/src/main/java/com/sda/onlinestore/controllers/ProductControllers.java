@@ -39,7 +39,7 @@ public class ProductControllers {
     @GetMapping(path ="edit-product/{id}")
     public String editProductPage(Model model, @PathVariable("id") Integer id) {
         ProductEntity productEntity = productService.getProduct(id);
-        model.addAttribute("products", productEntity);
+        model.addAttribute("productToBeEdit", productEntity);
         return "edit-product";
     }
 
