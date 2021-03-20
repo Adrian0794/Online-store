@@ -1,5 +1,6 @@
 package com.sda.onlinestore.controllers;
 
+
 import com.sda.onlinestore.entities.AddressEntity;
 import com.sda.onlinestore.entities.CategoryEntity;
 import com.sda.onlinestore.servicies.AddressService;
@@ -17,8 +18,9 @@ public class AddressControllers {
 
     @GetMapping(path = "getAddress")
     public String getAddress(Model model) {
-        List<AddressEntity> addressList = addressService.setAddressRepository();
+        List<AddressEntity> addressList = addressService.addressAllList();
         model.addAttribute("address", addressList);
         return "address";
     }
+
 }

@@ -6,10 +6,10 @@
 </head>
 <body>
 <table>
-<li th:each="product: ${products}">
-    <p th:text="${product.title}"/>
-    <p th:text="${product.price}"/>
-</li>
+    <li th:each="producator: ${producatori}">
+        <p th:text="${producator.firstname}"/>
+        <p th:text="${producator.lastname}"/>
+    </li>
 </table>
 </body>
 </html>

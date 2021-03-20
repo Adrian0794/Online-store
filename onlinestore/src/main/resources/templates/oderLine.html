@@ -5,8 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-<li th:each="order: ${orders}">
-    <p th:text="${order.totalCost}"/>
+<li th:each="orderLine: ${orderLines}">
+    <p th:text="${orderLine.product}"/>
+    <p th:text="${orderLine.productPrice}"/>
 </li>
 </body>
 </html>

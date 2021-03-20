@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.websocket.server.PathParam;
 import java.util.List;
 
 @Controller
@@ -20,17 +21,23 @@ public class CategoryControllers {
     public String getCategory(Model model) {
         List<CategoryEntity> categoryList = categoryService.getAllCategory();
         model.addAttribute("categories", categoryList);
+        model.addAttribute("category", categoryList);
         return "categories";
     }
 
     @GetMapping(path = "add-category")
     public String addCategory(Model model) {
         model.addAttribute("newCategory", new CategoryEntity());
-        return "add-category";
+        return "add-categories";
     }
     @PostMapping(path = "category/add")
     public String addCategory(@ModelAttribute CategoryEntity newCategory){
         categoryService.addCategory(newCategory);
         return "redirect:/getCategory";
+    }
+    @GetMapping(path = "edit-category/{id}")
+    public String editCategory(Model model, @PathParam("id") int id){
+        CategoryEntity categoryEntity = categoryService.getCatedoryById(id);
+        return "edit-category";
     }
 }
