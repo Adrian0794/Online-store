@@ -45,7 +45,8 @@ public class CategoryControllers {
 
     @PostMapping(path = "category/edit")
     public String editCategory(@ModelAttribute CategoryEntity categoryEntity) {
-        categoryService.editCategory();
+        categoryService.editCategory(categoryEntity);
+        return"redirect:/getCategory";
     }
 
 }

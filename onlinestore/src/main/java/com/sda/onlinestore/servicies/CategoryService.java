@@ -6,36 +6,39 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    public void getCatedoryById(Integer id) {
-        categoryRepository.findById(id);
-    }
-
-    public void addCategory(CategoryEntity newCategory) {
-        categoryRepository.save(newCategory);
+    public CategoryEntity getCatedoryById(Integer id) {
+        Optional<CategoryEntity> categoryEntityOptional = categoryRepository.findById(id);
+        CategoryEntity categoryEntity = categoryEntityOptional.get();
+        return categoryEntity;
     }
 
     public List<CategoryEntity> getAllCategory() {
         return categoryRepository.findAll();
     }
 
+    public void setCategoryRepository(CategoryRepository categoryRepository) {
+        this.categoryRepository = categoryRepository;
+    }
+
+    public void addCategory(CategoryEntity newCategory) {
+        categoryRepository.save(newCategory);
+    }
+
+
     public void deleteCategoryById(Integer id) {
         categoryRepository.deleteById(id);
     }
 
-<<<<<<< HEAD
-    public void editCategory(CategoryEntity editedCategory) {
+    public void editCategory(CategoryEntity editedCategory){
         categoryRepository.save(editedCategory);
-=======
-    public CategoryEntity getCatedoryById(Integer id) {
-       categoryRepository.findById(id);
-        return null;
->>>>>>> bbd332d66bba8d18f887753d6836c0d0fb847949
     }
+
 
 }
