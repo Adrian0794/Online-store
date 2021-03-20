@@ -24,7 +24,8 @@ public class CategoryService {
         categoryRepository.deleteById(id);
     }
 
-    public void getCatedoryById(Integer id) {
+    public CategoryEntity getCatedoryById(Integer id) {
        categoryRepository.findById(id);
+        return null;
     }
 }
