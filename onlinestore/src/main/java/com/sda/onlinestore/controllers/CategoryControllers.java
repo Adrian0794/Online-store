@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.websocket.server.PathParam;
@@ -29,14 +30,23 @@ public class CategoryControllers {
         model.addAttribute("newCategory", new CategoryEntity());
         return "add-categories";
     }
+
     @PostMapping(path = "category/add")
-    public String addCategory(@ModelAttribute CategoryEntity newCategory){
+    public String addCategory(@ModelAttribute CategoryEntity newCategory) {
         categoryService.addCategory(newCategory);
         return "redirect:/getCategory";
     }
+
     @GetMapping(path = "edit-category/{id}")
-    public String editCategory(Model model, @PathParam("id") int id){
+    public String editCategory(Model model, @PathVariable("id") Integer id) {
         CategoryEntity categoryEntity = categoryService.getCatedoryById(id);
         return "edit-category";
     }
+
+    @PostMapping(path = "category/edit")
+    public String editCategory(@ModelAttribute CategoryEntity categoryEntity) {
+        categoryService.editCategory(categoryEntity);
+        return"redirect:/getCategory";
+    }
+
 }
