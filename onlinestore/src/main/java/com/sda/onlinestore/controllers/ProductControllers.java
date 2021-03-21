@@ -37,7 +37,7 @@ public class ProductControllers {
     public String getProductUser( Model model) {
         List<ProductEntity> productList = productService.getAllProducts();
         model.addAttribute("products", productList);
-        return "productUser";
+        return "productuser";
     }
 
     @GetMapping(path = "add-product")

@@ -26,6 +26,7 @@
 
     <table>
 
+        <ul style="list-style:none; ">
         <li th:each="product: ${products}">
 
             <div class="card" style="width: 18rem;">
@@ -38,18 +39,11 @@
                     <a th:href="@{/addToCart/3/{id}(id = ${product.productId})}"><button type="button" class="btn btn-primary">Add to cart</button></a>
 
 
-
                 </div>
             </div>
 
-            <!--    <p th:text="${product.productId}"/>-->
-            <!--    <p th:text="${product.title}"/>-->
-            <!--    <p th:text="${product.description}"/>-->
-            <!--    <p th:text="${product.price}"/>-->
-
-            <!--    <a th:href="@{/edit-product/{id}(id = ${product.productId})}"><button>Edit</button></a>-->
-            <!--    <a th:href="@{/delete-product/{id}(id = ${product.productId})}"><button>Delete</button></a>-->
         </li>
+        </ul>
     </table>
 </div>
 </body>
