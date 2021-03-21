@@ -13,6 +13,7 @@ public class ProductEntity {
     private String description;
     private String thumbnail;
     private double price;
+    
     private productType type;
 
     private enum productType {
@@ -86,5 +87,6 @@ public class ProductEntity {
     public void setProducator(ProducatorEntity producator) {
         this.producator = producator;
     }
+
 }
 
