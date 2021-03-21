@@ -27,4 +27,10 @@ public class OrderControllers {
         return "order";
     }
 
+    @GetMapping (path = "addToCart/{userId}/{productId}")
+    public String addToCart(Model model, @PathVariable("userId") Integer userId, @PathVariable ("productId") Integer productId){
+        orderService.addToCart(userId, productId);
+        return "orders.html";
+    }
+
 }
