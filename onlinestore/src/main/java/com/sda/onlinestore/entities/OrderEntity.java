@@ -11,7 +11,6 @@ public class OrderEntity {
     private Integer comandaId;
     private Integer totalCost;
     private Integer dateOfOrder;
-    private String costumer;
     private String status;
 
 
@@ -48,14 +47,6 @@ public class OrderEntity {
         this.dateOfOrder = dateOfOrder;
     }
 
-    public String getCostumer() {
-        return costumer;
-    }
-
-    public void setCostumer(String costumer) {
-        this.costumer = costumer;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -74,6 +65,10 @@ public class OrderEntity {
 
     public UserAccountEntity getUserAccount() {
         return userAccount;
+    }
+
+    public void setUserAccount(UserAccountEntity userAccount) {
+        this.userAccount = userAccount;
     }
 }
 

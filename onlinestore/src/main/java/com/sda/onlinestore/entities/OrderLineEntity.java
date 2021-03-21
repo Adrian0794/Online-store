@@ -12,8 +12,8 @@ public class OrderLineEntity {
     private double quantityOfProducts;
     private double productPrice;
 
-    @OneToMany
-    private List<ProductEntity> product;
+    @ManyToOne
+    private ProductEntity product;
 
     public Integer getOrderLineId() {
         return orderLineId;
@@ -39,11 +39,11 @@ public class OrderLineEntity {
         this.productPrice = productPrice;
     }
 
-    public List<ProductEntity> getProduct() {
+    public ProductEntity getProduct() {
         return product;
     }
 
-    public void setProduct(List<ProductEntity> product) {
+    public void setProduct(ProductEntity product) {
         this.product = product;
     }
 }
