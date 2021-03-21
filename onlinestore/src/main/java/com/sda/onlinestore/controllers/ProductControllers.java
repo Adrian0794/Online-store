@@ -1,7 +1,9 @@
 package com.sda.onlinestore.controllers;
 
+import com.sda.onlinestore.entities.CategoryEntity;
 import com.sda.onlinestore.entities.ProducatorEntity;
 import com.sda.onlinestore.entities.ProductEntity;
+import com.sda.onlinestore.servicies.CategoryService;
 import com.sda.onlinestore.servicies.ProducatorService;
 import com.sda.onlinestore.servicies.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class ProductControllers {
     @Autowired
     private ProducatorService producatorService;
 
+    @Autowired
+    private CategoryService categoryService;
+
     @GetMapping(path ="getProduct")
     public String getProduct( Model model) {
         List<ProductEntity> productList = productService.getAllProducts();
@@ -34,6 +39,8 @@ public class ProductControllers {
         model.addAttribute("newProduct", new ProductEntity());
         List<ProducatorEntity> producatorEntities = producatorService.producatorList();
         model.addAttribute("producatori", producatorEntities);
+        List<CategoryEntity> categoryEntities = categoryService.getAllCategory();
+        model.addAttribute("categories", categoryEntities);
         return "add-product";
     }
 
@@ -49,6 +56,8 @@ public class ProductControllers {
         model.addAttribute("productToBeEdit", productEntity);
         List<ProducatorEntity> producatorEntities = producatorService.producatorList();
         model.addAttribute("producatori", producatorEntities);
+        List<CategoryEntity> categoryEntities = categoryService.getAllCategory();
+        model.addAttribute("categories", categoryEntities);
         return "edit-product";
     }
 
