@@ -33,6 +33,12 @@ public class ProductControllers {
         model.addAttribute("products", productList);
         return "product";
     }
+    @GetMapping(path ="getProductuser")
+    public String getProductUser( Model model) {
+        List<ProductEntity> productList = productService.getAllProducts();
+        model.addAttribute("products", productList);
+        return "productUser";
+    }
 
     @GetMapping(path = "add-product")
     public String addProductPage(Model model){
