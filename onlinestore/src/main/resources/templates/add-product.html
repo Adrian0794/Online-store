@@ -25,6 +25,16 @@
         <tr>
             <td><input type="submit" value="Submit"/></td>
         </tr>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect2">Productors</label>
+            </div>
+            <select id="inputGroupSelect2" class="custom-select" th:field="${newProduct.producator.producatorId}">
+                <option selected th:value="null">Choose</option>
+                <  <option th:each="producator: ${producatori}" th:value="${producator.producatorId}" th:text="${producator.firstName}" ></option>
+            </select>
+        </div>
     </table>
 </form>
 
