@@ -6,9 +6,8 @@
 </head>
 <body>
 <p>Edit category</p>
-<form action="#" th:action="@{/edit-category/{id}}" th:object="${categoryToBeEdit}" method="post">
+<form action="#" th:action="@{/category/edit}" th:object="${categoryToBeEdit}" method="post">
     <table border="1">
-
         <tr>
             <td><label> Name</label></td>
             <td><input type="text" th:field="*{categoryName}"/></td>

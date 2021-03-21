@@ -12,7 +12,7 @@ public class CategoryEntity {
     private String categoryName;
 
     @OneToMany(mappedBy = "category")
-    private List<ProductEntity> products;
+    private List<ProductEntity> product;
 
     public Integer getCategoryId() {
         return categoryId;
@@ -30,11 +30,11 @@ public class CategoryEntity {
         this.categoryName = categoryName;
     }
 
-    public List<ProductEntity> getProducts() {
-        return products;
+    public List<ProductEntity> getProduct() {
+        return product;
     }
 
-    public void setProducts(List<ProductEntity> products) {
-        this.products = products;
+    public void setProduct(List<ProductEntity> product) {
+        this.product = product;
     }
 }
