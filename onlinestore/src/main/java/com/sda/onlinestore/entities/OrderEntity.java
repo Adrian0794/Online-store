@@ -70,5 +70,13 @@ public class OrderEntity {
     public void setUserAccount(UserAccountEntity userAccount) {
         this.userAccount = userAccount;
     }
+
+    public List<OrderLineEntity> getOrderLines() {
+        return orderLines;
+    }
+
+    public void setOrderLines(List<OrderLineEntity> orderLines) {
+        this.orderLines = orderLines;
+    }
 }
 
