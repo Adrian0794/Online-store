@@ -44,12 +44,12 @@ public class ProductControllers {
     }
 
     @PostMapping(path = "product/edit")
-    public String productBook(@ModelAttribute ProductEntity productToBeEdit){
+    public String editProduct(@ModelAttribute ProductEntity productToBeEdit){
         productService.editProduct(productToBeEdit);
         return "redirect:/getProduct";
     }
     @GetMapping(path = "delete-product/{id}")
-    public String delete(Model model, @PathVariable("id") Integer id){
+    public String deleteProduct(Model model, @PathVariable("id") Integer id){
         productService.deleteProduct(id);
         return "redirect:/getProduct";
     }
