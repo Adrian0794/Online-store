@@ -26,6 +26,9 @@
 
 <table>
     <a th:href="@{/add-product}"><button type="button" class="btn btn-primary">Add product</button></a>
+    <ul style="list-style:none; ">
+
+
 <li th:each="product: ${products}">
 
     <div class="card" style="width: 18rem;">
@@ -49,6 +52,7 @@
 <!--    <a th:href="@{/edit-product/{id}(id = ${product.productId})}"><button>Edit</button></a>-->
 <!--    <a th:href="@{/delete-product/{id}(id = ${product.productId})}"><button>Delete</button></a>-->
 </li>
+    </ul>
 </table>
 </div>
 </body>
