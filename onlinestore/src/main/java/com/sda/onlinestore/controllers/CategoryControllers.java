@@ -1,7 +1,9 @@
 package com.sda.onlinestore.controllers;
 
 import com.sda.onlinestore.entities.CategoryEntity;
+import com.sda.onlinestore.entities.ProductEntity;
 import com.sda.onlinestore.servicies.CategoryService;
+import com.sda.onlinestore.servicies.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,17 +18,21 @@ import java.util.List;
 public class CategoryControllers {
     @Autowired
     private CategoryService categoryService;
+    @Autowired
+    private ProductService productService;
 
     @GetMapping(path = "getCategory")
     public String getCategory(Model model) {
         List<CategoryEntity> categoryList = categoryService.getAllCategory();
-        model.addAttribute("categories", categoryList);
+        model.addAttribute("categoryL", categoryList);
         return "categories";
     }
 
     @GetMapping(path = "add-category")
     public String addCategoryPage(Model model) {
         model.addAttribute("newCategory", new CategoryEntity());
+        List<ProductEntity> productEntities = productService.getAllProducts();
+        model.addAttribute("products", productEntities);
         return "add-categories";
     }
 
@@ -40,6 +46,8 @@ public class CategoryControllers {
     public String editCategoryPage(Model model, @PathVariable("id") Integer id) {
         CategoryEntity categoryEntity = categoryService.getCategory(id);
         model.addAttribute("categoryToBeEdit", categoryEntity);
+        List<ProductEntity> productEntities = productService.getAllProducts();
+        model.addAttribute("products", productEntities);
         return "edit-category";
     }
 

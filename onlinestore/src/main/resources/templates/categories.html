@@ -40,15 +40,14 @@
 
     <table>
         <a th:href="@{/add-category}"><button type="button" class="btn btn-primary">Add category</button></a>
-        <li th:each="category: ${categories}">
+        <li th:each="category: ${categoryL}">
             <div class="card" style="width: 18rem;">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${categoryName}"></h5>
-                    <p th:text="${category.categoryId}"/>
+                    <p th:text="${category.categoryName}"/>
                     <a th:href="@{/delete-category/{id}(id = ${category.categoryId})}" class="btn btn-danger">Delete</a>
                     <a th:href="@{/edit-category/{id}(id = ${category.categoryId})}" class="btn btn-primary">Edit</a>
-
                 </div>
             </div>
 
