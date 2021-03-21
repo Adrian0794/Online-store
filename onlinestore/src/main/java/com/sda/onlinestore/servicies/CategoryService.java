@@ -13,7 +13,7 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    public CategoryEntity getCatedoryById(Integer id) {
+    public CategoryEntity getCategory(Integer id) {
         Optional<CategoryEntity> categoryEntityOptional = categoryRepository.findById(id);
         CategoryEntity categoryEntity = categoryEntityOptional.get();
         return categoryEntity;
