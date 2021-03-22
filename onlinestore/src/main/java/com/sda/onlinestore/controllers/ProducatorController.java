@@ -35,5 +35,6 @@ public class ProducatorController {
         producatorService.addProducator(newProducator);
         return "redirect:/getProducator";
     }
+    //delete
 
 }

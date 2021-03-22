@@ -40,6 +40,7 @@
 
     <table>
         <a th:href="@{/add-category}"><button type="button" class="btn btn-primary">Add category</button></a>
+        <ul style="list-style:none; ">
         <li th:each="category: ${categoryL}">
             <div class="card" style="width: 18rem;">
                 <img src="..." class="card-img-top" alt="...">
