@@ -22,7 +22,7 @@ public class  AddressControllers {
     public String getAddress(Model model) {
         List<AddressEntity> addressList = addressService.addressAllList();
         model.addAttribute("address", addressList);
-        return "address";
+        return "homepage";
     }
 
     @GetMapping(path ="add-address")
