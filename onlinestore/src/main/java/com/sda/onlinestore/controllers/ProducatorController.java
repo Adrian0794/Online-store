@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -36,5 +37,10 @@ public class ProducatorController {
         return "redirect:/getProducator";
     }
     //delete
+    @GetMapping(path = "delete-producator/{id}")
+    public String deleteProducator(Model model, @PathVariable("id") Integer id) {
+        producatorService.deleteProducatorById(id);
+        return "redirect:/getProducator";
+    }
 
 }

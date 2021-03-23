@@ -21,17 +21,23 @@ public class OrderControllers {
     private OrderService orderService;
 
     @GetMapping(path = "getOrder")
-    public String getOrder( Model model){
+    public String getOrder(Model model) {
         List<OrderEntity> orderList = orderService.getAllOrders();
-        model.addAttribute("orders",orderList);
+        model.addAttribute("orders", orderList);
         return "order";
     }
 
-    @GetMapping (path = "addToCart/{userId}/{productId}")
-    public String addToCart(Model model, @PathVariable("userId") Integer userId, @PathVariable ("productId") Integer productId){
+    @GetMapping(path = "addToCart/{userId}/{productId}")
+    public String addToCart(Model model, @PathVariable("userId") Integer userId, @PathVariable("productId") Integer productId) {
         orderService.addToCart(userId, productId);
         return "orders.html";
     }
 
     //delete
+
+    @GetMapping(path = "delete-order/{id}")
+    public String deleteOrder(Model model, @PathVariable("id") Integer id) {
+        orderService.deleteOrder(id);
+        return "redirect:/getOrder";
+    }
 }
