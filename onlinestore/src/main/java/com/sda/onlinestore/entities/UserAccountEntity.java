@@ -11,6 +11,7 @@ public class UserAccountEntity {
     private String username;
     private String password;
     private Boolean enable;
+    private String role;
 
     @OneToOne
     private AddressEntity address;
@@ -54,4 +55,13 @@ public class UserAccountEntity {
     public void setAddress(AddressEntity address) {
         this.address = address;
     }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }
+

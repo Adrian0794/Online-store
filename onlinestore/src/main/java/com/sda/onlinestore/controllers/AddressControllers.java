@@ -2,7 +2,6 @@ package com.sda.onlinestore.controllers;
 
 
 import com.sda.onlinestore.entities.AddressEntity;
-import com.sda.onlinestore.entities.CategoryEntity;
 import com.sda.onlinestore.servicies.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +21,7 @@ public class  AddressControllers {
     public String getAddress(Model model) {
         List<AddressEntity> addressList = addressService.addressAllList();
         model.addAttribute("address", addressList);
-        return "homepage";
+        return "index";
     }
 
     @GetMapping(path ="add-address")
