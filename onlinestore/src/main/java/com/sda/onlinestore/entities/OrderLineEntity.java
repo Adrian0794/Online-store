@@ -1,5 +1,7 @@
 package com.sda.onlinestore.entities;
 
+import com.fasterxml.jackson.annotation.JacksonInject;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,6 +13,7 @@ public class OrderLineEntity {
     private Integer orderLineId;
     private double quantityOfProducts;
     private double productPrice;
+    private double totalPriceOrder;
 
     @ManyToOne
     private ProductEntity product;
@@ -45,5 +48,13 @@ public class OrderLineEntity {
 
     public void setProduct(ProductEntity product) {
         this.product = product;
+    }
+
+    public double getTotalPriceOrder() {
+        return totalPriceOrder;
+    }
+
+    public void setTotalPriceOrder(double totalPriceOrder) {
+        this.totalPriceOrder = totalPriceOrder;
     }
 }

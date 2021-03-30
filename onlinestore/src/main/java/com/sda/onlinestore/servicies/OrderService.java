@@ -1,5 +1,6 @@
 package com.sda.onlinestore.servicies;
 
+import ch.qos.logback.core.status.Status;
 import com.sda.onlinestore.entities.OrderEntity;
 import com.sda.onlinestore.entities.OrderLineEntity;
 import com.sda.onlinestore.entities.ProductEntity;
@@ -21,7 +22,7 @@ public class OrderService {
     private OrderRepository orderRepository;
 
     @Autowired
-    private UserAccountRepository accountRepository;
+    private UserAccountRepository userAccountRepository;
 
     @Autowired
     private ProductRepository productRepository;
@@ -53,7 +54,7 @@ public class OrderService {
     public void addToCart( Integer userId, Integer productId){
 
         OrderEntity orderEntity = new OrderEntity();
-        Optional<UserAccountEntity> userBox = accountRepository.findById(userId);
+        Optional<UserAccountEntity> userBox = userAccountRepository.findById(userId);
         UserAccountEntity userAccountEntity = userBox.get();
         orderEntity.setUserAccount(userAccountEntity);
 
@@ -69,5 +70,48 @@ public class OrderService {
         orderEntity.setOrderLines(orderLineEntityList);
         orderEntity.setStatus("Open");
     }
+
+//    public void addToCart(String userName, Integer productID) {
+//        Optional<OrderEntity> orderModelOptional = orderRepository.findOrderModelByUserNameAndStatus(userName, Status.);
+//        UserAccountEntity userModel =userAccountRepository.findByUsername(userName).orElse(null);
+//        OrderEntity order;
+//        boolean isAlreadyInBasket = false;
+//        if (orderModelOptional.isPresent()) {
+//            order = orderModelOptional.get();
+//            List<OrderLineEntity> orderLineModels = order.getOrderLines();
+//            for (OrderLineEntity olm : orderLineModels) {
+//                if (olm.getProduct().getProductId() == productID) {
+//                    olm.setQuantityOfProducts(olm.getQuantityOfProducts() + 1);
+//                    olm.setProductPrice(olm.getQuantityOfProducts() * olm.getProduct().getPrice());
+//                    isAlreadyInBasket = true;
+//                }
+//            }
+//            if (!isAlreadyInBasket) {
+//                OrderLineEntity orderLineModel = new OrderLineEntity();
+//                orderLineModel.setQuantityOfProducts(1);
+//                orderLineModel.setProduct(productRepository.findById(productID).orElse(null));
+//                orderLineModel.setTotalPriceOrder((orderLineModel.getQuantityOfProducts() * orderLineModel.getProduct().getPrice()));
+//                order.getOrderLines().add(orderLineModel);
+//                order.setTotalCost(productRepository(order.getOrderLines()));
+//                orderRepository.save(order);
+//            }
+//            order.setDeliveryAdress(userModel.getAddress());
+//            order.setTotalCost(productRepository(order.getOrderLines()));
+//            orderRepository.save(order);
+//        } else {
+//            order = new OrderEntity();
+//            order.setStatus(Status.HOLD);
+//            order.setUserAccount(userModel);
+//            order.setDeliveryAdress(userModel.getAddress());
+//            order.setUserAccount(userModel.getAddress());
+//            OrderLineEntity orderLineModel = new OrderLineEntity();
+//            orderLineModel.setQuantityOfProducts(1);
+//            orderLineModel.setProduct(productRepository.findById(productID).orElse(null));
+//            orderLineModel.setProductPrice(orderLineModel.getQuantityOfProducts() * orderLineModel.getProduct().getPrice());
+//            order.getOrderLines().add(orderLineModel);
+//            order.setTotalCost(productRepository(order.getOrderLines()));
+//            orderRepository.save(order);
+//        }
+//    }
 
 }

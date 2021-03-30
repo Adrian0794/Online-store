@@ -27,12 +27,20 @@ public class ProductControllers {
     @Autowired
     private CategoryService categoryService;
 
+    @GetMapping(path ="getProduct/{categoryId}")
+    public String getProductByCategory( @PathVariable Integer categoryId, Model model) {
+        List<ProductEntity> productList = productService.getProductByCategoryId(categoryId);
+        model.addAttribute("products", productList);
+        return "product";
+    }
+
     @GetMapping(path ="getProduct")
     public String getProduct( Model model) {
         List<ProductEntity> productList = productService.getAllProducts();
         model.addAttribute("products", productList);
         return "product";
     }
+
     @GetMapping(path ="getProductuser")
     public String getProductUser( Model model) {
         List<ProductEntity> productList = productService.getAllProducts();

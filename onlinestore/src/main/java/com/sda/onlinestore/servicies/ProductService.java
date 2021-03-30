@@ -39,5 +39,8 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    //metoda pentru fiecare tip de categorie
+    public List<ProductEntity> getProductByCategoryId(Integer categoryID){
+        return productRepository.findByCategoryCategoryId(categoryID);
+    }
+
 }
