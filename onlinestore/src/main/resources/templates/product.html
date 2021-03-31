@@ -59,10 +59,60 @@
 <!--    </div>-->
 <!--</nav>-->
 
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Homemade by Cristina</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.facebook.com/HandmadebyCristinafetru/">Facebook</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Produsele noastre
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <li><a class="dropdown-item" href="/getProduct/{categoryId}{}">Nume din fetru simple</a></li>
+                        <li><a class="dropdown-item" href="#">Nume din fetru personalizate</a></li>
+                        <li><a class="dropdown-item" href="#">Animalute crosetate</a></li>
+                        <li><a class="dropdown-item" href="#">Ghiozdan/rucsac</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Preturi
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <li><a class="dropdown-item" href="/getProduct/{categoryId}{}">Nume din fetru simple - 50RON</a></li>
+                        <li><a class="dropdown-item" href="#">Nume din fetru personalizate 50RON + PERSONALIZAREA 20RON</a></li>
+                        <li><a class="dropdown-item" href="#">Animalute crosetate 100RON </a></li>
+                        <li><a class="dropdown-item" href="#">Ghiozdan/rucsac - 150RON</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a th:href="@{/add-product}" class="nav-link active" aria-current="page">Adauga produs</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                <a class="nav-link"  tabindex="-1" aria-disabled="true" th:href="@{/logout}">Logout</a>
+            </form>
+        </div>
+    </div>
+</nav>
+
 <div class="container">
 
 <table>
-    <a th:href="@{/add-product}"><button type="button" class="btn btn-primary">Add product</button></a>
+
     <ul style="list-style:none; ">
 
 
