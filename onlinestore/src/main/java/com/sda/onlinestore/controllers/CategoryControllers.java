@@ -62,4 +62,9 @@ public class CategoryControllers {
         categoryService.deleteCategoryById(id);
         return "redirect:/getCategory";
     }
+    @GetMapping(path = "/homepage")
+    public String getHomePage() {
+        return "/homepage";
+    }
+
 }

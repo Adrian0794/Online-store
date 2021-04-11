@@ -1,6 +1,7 @@
 package com.sda.onlinestore.servicies;
 
 import com.sda.onlinestore.entities.AddressEntity;
+import com.sda.onlinestore.entities.ProducatorEntity;
 import com.sda.onlinestore.entities.UserAccountEntity;
 import com.sda.onlinestore.repositories.AddressRepository;
 import com.sda.onlinestore.repositories.UserAccountRepository;
@@ -27,7 +28,6 @@ public class UserAccountService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        //Implementarea
         Optional<UserAccountEntity> userOptional = userAccountRepository.findByUsername(s);
         if (userOptional.isPresent()) {
             UserAccountEntity userAccountEntity1 = userOptional.get();
@@ -51,5 +51,10 @@ public class UserAccountService implements UserDetailsService {
         String encodedPassword = passwordEncoder.encode(password);
         user.setPassword(encodedPassword);
         userAccountRepository.save(user);
+    }
+
+    public UserAccountEntity getUserAccount(String username){
+        Optional<UserAccountEntity> userOptional = userAccountRepository.findByUsername(username);
+        return userOptional.get();
     }
 }

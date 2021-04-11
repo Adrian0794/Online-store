@@ -9,12 +9,16 @@
 <form action="#" th:action="@{/category/edit}" th:object="${categoryToBeEdit}" method="post">
     <table border="1">
         <tr>
-            <td><label> Ide</label></td>
+            <td><label> Id</label></td>
             <td><input readonly type="number" th:field="*{categoryId}"/></td>
         </tr>
         <tr>
-            <td><label> Name</label></td>
+            <td><label> Denumire </label></td>
             <td><input type="text" th:field="*{categoryName}"/></td>
+        </tr>
+        <tr>
+            <td><label> Imagine</label></td>
+            <td><input type="text" th:field="*{categoryImage}"/></td>
         </tr>
         <tr>
             <td><input type="submit" value="Submit"/></td>

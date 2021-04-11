@@ -9,8 +9,12 @@
 <form action="#" th:action="@{/category/add}" th:object="${newCategory}" method="post">
     <table border="1">
         <tr>
-            <td><label> New category</label>
+            <td><label> Denumire categorie</label>
             <td><input type="text" th:field="*{categoryName}"/></td>
+        </tr>
+        <tr>
+            <td><label> Link imagine</label>
+            <td><input type="text" th:field="*{categoryImage}"/></td>
         </tr>
         <tr>
             <td><input type="submit" value="Submit"/></td>

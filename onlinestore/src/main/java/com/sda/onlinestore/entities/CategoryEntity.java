@@ -10,6 +10,7 @@ public class CategoryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer categoryId;
     private String categoryName;
+    private String categoryImage;
 
     @OneToMany(mappedBy = "category")
     private List<ProductEntity> product;
@@ -36,5 +37,13 @@ public class CategoryEntity {
 
     public void setProduct(List<ProductEntity> product) {
         this.product = product;
+    }
+
+    public String getCategoryImage() {
+        return categoryImage;
+    }
+
+    public void setCategoryImage(String categoryImage) {
+        this.categoryImage = categoryImage;
     }
 }

@@ -5,6 +5,7 @@ import com.sda.onlinestore.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,8 +40,9 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public List<ProductEntity> getProductByCategoryId(Integer categoryID){
-        return productRepository.findByCategoryCategoryId(categoryID);
+
+    public List<ProductEntity> getProductsByCategoryId(Integer idCategory){
+        return productRepository.findByCategoryCategoryId(idCategory);
     }
 
 }

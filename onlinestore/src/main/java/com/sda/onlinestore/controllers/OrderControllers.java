@@ -2,6 +2,7 @@ package com.sda.onlinestore.controllers;
 
 import com.sda.onlinestore.entities.OrderEntity;
 import com.sda.onlinestore.entities.ProductEntity;
+import com.sda.onlinestore.entities.UserAccountEntity;
 import com.sda.onlinestore.servicies.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,12 +28,17 @@ public class OrderControllers {
         return "order";
     }
 
-    @GetMapping(path = "addToCart/{userId}/{productId}")
-    public String addToCart(Model model, @PathVariable("userId") Integer userId, @PathVariable("productId") Integer productId) {
-        orderService.addToCart(userId, productId);
-        return "orders.html";
-    }
+//    @GetMapping(path = "addToCart/{userId}/{productId}")
+//    public String addToCart(Model model, @PathVariable("userId") Integer userId, @PathVariable("productId") Integer productId) {
+//        orderService.addToCart(userId, productId);
+//        return "orders.html";
+//    }
 
+//    @GetMapping(path = "addToCart/{userName}/{productId}")
+//    public String addToCart(Model model, @PathVariable("userId") String userName, @PathVariable("productId") Integer productId) {
+//        orderService.addToCart(userName, productId);
+//        return "orders.html";
+//    }
     //delete
 
     @GetMapping(path = "delete-order/{id}")

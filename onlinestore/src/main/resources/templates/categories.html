@@ -2,12 +2,35 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-    <meta charset="UTF-8">
+    <title>Category Page</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <title>Category_page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default rounded borders and increase the bottom margin */
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+            background-color: blue;
+            font-family: "Arial Narrow";
+            font-size: large;
+            font-palette: dark;
+        }
+
+        /* Remove the jumbotron's default bottom margin */
+        .jumbotron {
+            margin-bottom: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -40,39 +63,102 @@
 <!--</table>-->
 <!--</div>-->
 
-<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+<!--<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">-->
 
+<!--    <div class="container-fluid">-->
+<!--        <a class="navbar-brand" href="#">Homemade by Cristina</a>-->
+<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"-->
+<!--                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" id="navbarScroll">-->
+<!--            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="&#45;&#45;bs-scroll-height: 100px;">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link active" aria-current="page" href="/login">Home</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="https://www.facebook.com/HandmadebyCristinafetru/">Facebook</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"-->
+<!--                       data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                        Produsele noastre-->
+<!--                    </a>-->
+<!--                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">-->
+<!--                        <li><a class="dropdown-item" href="/getProduct/{categoryId}{}">Nume din fetru simple</a></li>-->
+<!--                        <li><a class="dropdown-item" href="#">Nume din fetru personalizate</a></li>-->
+<!--                        <li><a class="dropdown-item" href="#">Animalute crosetate</a></li>-->
+<!--                        <li><a class="dropdown-item" href="#">Ghiozdan/rucsac</a></li>-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"-->
+<!--                       data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                        Preturi-->
+<!--                    </a>-->
+<!--                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">-->
+<!--                        <li><a class="dropdown-item" href="/getProduct/{categoryId}{}">Nume din fetru simple - 50RON</a>-->
+<!--                        </li>-->
+<!--                        <li><a class="dropdown-item" href="#">Nume din fetru personalizate 50RON + PERSONALIZAREA-->
+<!--                            20RON</a></li>-->
+<!--                        <li><a class="dropdown-item" href="#">Animalute crosetate 100RON </a></li>-->
+<!--                        <li><a class="dropdown-item" href="#">Ghiozdan/rucsac - 150RON</a></li>-->
+<!--                    </ul>-->
+<!--                <li class="nav-item">-->
+<!--                    <a th:href="@{/add-category}" class="nav-link active" aria-current="page">Categorie noua</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--            </ul>-->
+<!--            <form class="d-flex">-->
+<!--                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--                <a class="nav-link" tabindex="-1" aria-disabled="true" th:href="@{/logout}">Logout</a>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<!--<div class="container">-->
+<!--</div>-->
+<!--<table>-->
+
+<!--    <ul style="list-style:none; ">-->
+<!--        <li th:each="category: ${categoryL}">-->
+<!--            <div class="card" style="width: 18rem;">-->
+<!--                <img th src="@{${category.categoryImage}}" class="card-img-top" alt="...">-->
+<!--                <nav class="card-body">-->
+<!--                    <h5 class="card-title" th:text="${categoryName}"></h5>-->
+<!--                    <p th:text="${category.categoryName}"/>-->
+<!--                    <a th:href="@{/delete-category/{id}(id = ${category.categoryId})}" class="btn btn-danger">Delete</a>-->
+<!--                    <a th:href="@{/edit-category/{id}(id = ${category.categoryId})}" class="btn btn-primary">Edit</a>-->
+<!--                </nav>-->
+<!--            </div>-->
+<!--        </li>-->
+<!--    </ul>-->
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Handmade By Cristina</h1>
+        <p>Creativitate, Culoare, Dar</p>
+    </div>
+</div>
+
+<nav class="navbar navbar-inverse">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Homemade by Cristina</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/login">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.facebook.com/HandmadebyCristinafetru/">Facebook</a>
-                </li>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/getCategory">Home</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/getHomePage">Despre mine</a></li>
+                <li><a href="/getProduct">Produse</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                        Produsele noastre
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                        <li><a class="dropdown-item" href="/getProduct/{categoryId}{}">Nume din fetru simple</a></li>
-                        <li><a class="dropdown-item" href="#">Nume din fetru personalizate</a></li>
-                        <li><a class="dropdown-item" href="#">Animalute crosetate</a></li>
-                        <li><a class="dropdown-item" href="#">Ghiozdan/rucsac</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                        Preturi
-                    </a>
+                       data-bs-toggle="dropdown" aria-expanded="false"> Preturi </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                         <li><a class="dropdown-item" href="/getProduct/{categoryId}{}">Nume din fetru simple - 50RON</a>
                         </li>
@@ -81,36 +167,74 @@
                         <li><a class="dropdown-item" href="#">Animalute crosetate 100RON </a></li>
                         <li><a class="dropdown-item" href="#">Ghiozdan/rucsac - 150RON</a></li>
                     </ul>
-                <li class="nav-item">
-                    <a th:href="@{/add-category}" class="nav-link active" aria-current="page">Categorie noua</a>
-                </li>
+                <li><a href="#">Contact</a></li>
+                <li><a th:href="@{/add-category}" class="nav-link active" aria-current="page">Categorie noua</a></li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                <li><a class="nav-link" tabindex="-1" aria-disabled="true" th:href="@{/logout}">Logout</a></li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-                <a class="nav-link" tabindex="-1" aria-disabled="true" th:href="@{/logout}">Logout</a>
-            </form>
         </div>
     </div>
 </nav>
 
 <div class="container">
-</div>
-<table>
-
-    <ul style="list-style:none; ">
-        <li th:each="category: ${categoryL}">
-            <div class="card" style="width: 18rem;">
-                <img src="https://scontent.fotp3-3.fna.fbcdn.net/v/t1.6435-9/84281968_1326239624228716_6789865595828436992_n.jpg?_nc_cat=101&_nc_map=test-rt&ccb=1-3&_nc_sid=174925&_nc_ohc=o6AJoCho1joAX9mFake&_nc_ht=scontent.fotp3-3.fna&oh=e8ee18e7fa027fd2034d2b275c2e9f13&oe=60894E4C" class="card-img-top" alt="...">
-                <nav class="card-body">
-                    <h5 class="card-title" th:text="${categoryName}"></h5>
-                    <p th:text="${category.categoryName}"/>
-                    <a th:href="@{/delete-category/{id}(id = ${category.categoryId})}" class="btn btn-danger">Delete</a>
-                    <a th:href="@{/edit-category/{id}(id = ${category.categoryId})}" class="btn btn-primary">Edit</a>
-                </nav>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">NUME DIN FETRU SIMPLE</div>
+                <div class="panel-body"><img src="/images/nume_simplu.jpg" style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Se fac la comanda, cu numele dorit de dumneavostra. De asemenea se poate alege
+                    o tematica.
+                </div>
             </div>
-        </li>
-    </ul>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-danger">
+                <div class="panel-heading">NUME DIN FETRU PERSONALIZATE</div>
+                <div class="panel-body"><img src="/images/nume_personalizat.jfif" class="img-responsive" style="width:100%"
+                                             alt="Image"></div>
+                <div class="panel-footer">Se fac la comanda, cu numele dorit de dumneavostra. In plus, se adauga si
+                    datele de natere. De asemenea se poate alege
+                    o tematica.
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-success">
+                <div class="panel-heading">ANIMALUTE CROSETATE</div>
+                <div class="panel-body"><img src="/images/animalut_crosetat.jpeg" class="img-responsive"
+                                             style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Avem o serie de animalute din care va puteti alege un model sau puteti veni
+                    dumneavoastra cu un model.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">GHIOZDANELE/RUCSACE</div>
+                <div class="panel-body"><img src="/images/saculet.jpeg.jfif" class="img-responsive"
+                                             style="width:100%" alt="Image"></div>
+                <div class="panel-footer">Se alege tema si daca doriti se adauga si numele.</div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+
+<footer class="container-fluid text-center">
+    <p>Contact</p>
+    <form class="form-inline">Get deals:
+        <input type="email" class="form-control" size="50" placeholder="Email Address">
+        <button type="button" class="btn btn-danger">Sign Up</button>
+    </form>
+</footer>
 </body>
 </html>

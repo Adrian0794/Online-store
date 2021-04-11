@@ -20,7 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
 //        vom defini regulile de securitate in aplicatia noastra
-        http.authorizeRequests().antMatchers("/login", "/register/**", "/register","/index").permitAll()
+        http.authorizeRequests().antMatchers("/login", "/register/**", "/register/add","/index", "/logout").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login")

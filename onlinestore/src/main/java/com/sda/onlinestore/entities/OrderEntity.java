@@ -9,10 +9,12 @@ public class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer comandaId;
-    private Integer totalCost;
+    private double totalCost;
     private Integer dateOfOrder;
-    private String status;
 
+    private Status type;
+
+    public enum Status {NEW, HOLD, SHIPPED, DELIVERED, CLOSED;}
 
     @OneToOne
     private AddressEntity deliveryAdress;
@@ -31,11 +33,11 @@ public class OrderEntity {
         this.comandaId = comandaId;
     }
 
-    public Integer getTotalCost() {
+    public double getTotalCost() {
         return totalCost;
     }
 
-    public void setTotalCost(Integer totalCost) {
+    public void setTotalCost(double totalCost) {
         this.totalCost = totalCost;
     }
 
@@ -47,13 +49,6 @@ public class OrderEntity {
         this.dateOfOrder = dateOfOrder;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
     public AddressEntity getDeliveryAdress() {
         return deliveryAdress;
@@ -77,6 +72,14 @@ public class OrderEntity {
 
     public void setOrderLines(List<OrderLineEntity> orderLines) {
         this.orderLines = orderLines;
+    }
+
+    public Status getType() {
+        return type;
+    }
+
+    public void setType(Status type) {
+        this.type = type;
     }
 }
 
