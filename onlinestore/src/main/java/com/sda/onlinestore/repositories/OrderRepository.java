@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Repository
 public interface OrderRepository extends JpaRepository<OrderEntity, Integer> {
-        public Optional<OrderEntity> findOrderModelByUserAccountAndStatus(String userAccount, OrderEntity.Status status);
+//        public Optional<OrderEntity> findOrderModelByUserAccountAndStatus(String userAccount, OrderEntity.Status status);
 
 
 }

@@ -28,11 +28,11 @@ public class OrderControllers {
         return "order";
     }
 
-//    @GetMapping(path = "addToCart/{userId}/{productId}")
-//    public String addToCart(Model model, @PathVariable("userId") Integer userId, @PathVariable("productId") Integer productId) {
-//        orderService.addToCart(userId, productId);
-//        return "orders.html";
-//    }
+    @GetMapping(path = "addToCart/{userId}/{productId}")
+    public String addToCart(Model model, @PathVariable("userId") Integer userId, @PathVariable("productId") Integer productId) {
+        orderService.addToCart(userId, productId);
+        return "orders.html";
+    }
 
 //    @GetMapping(path = "addToCart/{userName}/{productId}")
 //    public String addToCart(Model model, @PathVariable("userId") String userName, @PathVariable("productId") Integer productId) {

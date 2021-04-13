@@ -1,6 +1,7 @@
 package com.sda.onlinestore.entities;
 
 import javax.persistence.*;
+import java.awt.*;
 import java.util.List;
 
 @Entity
