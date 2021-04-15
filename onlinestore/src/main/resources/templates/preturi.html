@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>Price Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default rounded borders and increase the bottom margin */
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+            background-color: burlywood;
+            font-family: "Noto Serif", serif;
+            font-size: large;
+            text-emphasis-color: #e3f2fd;
+
+        }
+
+        /* Remove the jumbotron's default bottom margin */
+
+        .jumbotron
+        .jumbotron {
+            margin-bottom: 0;
+            font-family: "Arial Narrow";
+            font-size: larger;
+            ttext-emphasis-color: blue;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: burlywood;
+            padding: 25px;
+        }
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/getCategory">Home</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/homepage">Despre mine</a></li>
+                <li><a class="nav-link dropdown-toggle" href="/getProduct" id="navbarScrollingDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                    Magazin
+                </a></li>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h3 style="font-family: 'Comic Sans MS'">Preturi pe categorii de produse: </h3>
+
+    <table class="table table-bordered" style="font-family: 'Comic Sans MS'">
+        <thead>
+        <tr class="warning">
+            <th>Categorie produs</th>
+            <th>Pret</th>
+            <th>Detalii</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Nume fetru simple</td>
+            <td>12 RON/ litera</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Nume fetru personalizate</td>
+            <td>12 RON/ litera</td>
+            <td>Se adauga 5 RON pentru fiecare figurina.</td>
+        </tr>
+        <tr>
+            <td>Animalute crosetate</td>
+            <td>130 RON/ animalut</td>
+            <td>Se adauga 25 RON pentru imprimare nume.</td>
+        </tr>
+        <tr>
+            <td>Ghiozdanele/ Ruscace</td>
+            <td>90 RON/ buc</td>
+            <td>Se adauga 25 RON pentru imprimare nume.</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <h4 style="align-items: center; font-family: 'Comic Sans MS'">Pentru total comanda mai mare de 150 RON transportul este gratuit!</h4>
+</div>
+</body>
+</html>

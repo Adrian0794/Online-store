@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-    <title>Home page </title>
 </head>
 <body>
+<!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 <!--
@@ -23,98 +23,31 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 -->
 
-
-<!--    <nav class="navbar navbar-expand-lg navbar-light bg-light">-->
-        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
-
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Homemade by Cristina</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.facebook.com/HandmadebyCristinafetru/">Facebook</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Produsele noastre
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                <li><a class="dropdown-item" href="/getProduct/1">Nume din fetru simple</a></li>
-                                <li><a class="dropdown-item" href="/getProduct/2">Nume din fetru personalizate</a></li>
-                                <li><a class="dropdown-item" href="/getProduct/3">Animalute crosetate</a></li>
-                                <li><a class="dropdown-item" href="/getProduct/4">Ghiozdan/rucsac</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Preturi
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="/getProduct/{categoryId}{}">Nume din fetru simple - 50RON</a></li>
-                            <li><a class="dropdown-item" href="#">Nume din fetru personalizate 50RON + PERSONALIZAREA 20RON</a></li>
-                            <li><a class="dropdown-item" href="#">Animalute crosetate 100RON </a></li>
-                            <li><a class="dropdown-item" href="#">Ghiozdan/rucsac - 150RON</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                    <a class="nav-link"  tabindex="-1" aria-disabled="true" th:href="@{/logout}">Logout</a>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-
-</div>
-
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
     <div class="carousel-inner">
-        <div class="carousel-item active" >
-            <img class="rounded mx-auto d-block" src="https://ideipentrucasa.ro/wp-content/uploads/2015/10/decoratiuni-fetru-craciun-5.jpg"
-                 width="800" height="800"
-                  alt="Image not available at the moment" >
-
-
+        <div class="carousel-item active">
+            <img src="/images/cadouri-handmade.jpg" class="d-block w-100" alt="...">
         </div>
-        <div class="carousel-item ">
-            <img class="rounded mx-auto d-block" src="https://scontent.fotp8-1.fna.fbcdn.net/v/t1.0-9/119109066_1508414406011236_8260244538412215236_n.jpg?_nc_cat=111&_nc_map=test-rt&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=ZM0y7PfdPwgAX-POSe4&_nc_oc=AQlKC8HTIdVnp-nnWQeLzfXJVOx0ha-_0217OZ4F9KNdhnB14BLLAA0dgn8oDJPkkmw&_nc_ht=scontent.fotp8-1.fna&oh=123b06b4e0024f825533ae4274067d35&oe=6080B49F"
-                 width="800" height="800"
-                  alt="Image not available at the moment" align="middle"  >
-
-
+        <div class="carousel-item">
+            <img src="/images/logo.jpg" class="d-block w-100" alt="...">
         </div>
-        <div class="carousel-item " >
-            <img class="rounded mx-auto d-block" src="https://scontent.fotp8-1.fna.fbcdn.net/v/t1.0-9/84336388_1319507164901962_1255654532461887488_n.jpg?_nc_cat=104&_nc_map=test-rt&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=pg9V_E_hFKwAX8LEwbz&_nc_ht=scontent.fotp8-1.fna&oh=002aef3897ea709f50ff30932d96f12b&oe=607E58DE"
-                 width="800" height="800" align="center"
-                  alt="Image not available at the moment">
+        <div class="carousel-item">
+            <img src="/images/collage2.jpg" class="d-block w-100" alt="...">
         </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
-</div>
-<br>
-<br>
-
-<div align="center"><p>Contact</p>
-tel.0748678134
-    <br>
-    email: cristinaszabo89@yahoo.com
-    <br>
-sediul: Cluj-Napoca
 </div>
 
 </body>

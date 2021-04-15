@@ -21,7 +21,7 @@ public class  AddressControllers {
     public String getAddress(Model model) {
         List<AddressEntity> addressList = addressService.addressAllList();
         model.addAttribute("address", addressList);
-        return "index";
+        return "address-form";
     }
 
     @GetMapping(path ="add-address")

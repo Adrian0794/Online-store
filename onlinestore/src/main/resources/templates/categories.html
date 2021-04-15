@@ -8,30 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
-        /* Remove the navbar's default rounded borders and increase the bottom margin */
-        .navbar {
-            margin-bottom: 50px;
-            border-radius: 0;
-            background-color: burlywood;
-            font-family: "Noto Serif", serif;
-            font-size: large;
-            text-emphasis-color: #e3f2fd;
-
-        }
-
-        /* Remove the jumbotron's default bottom margin */
-        .jumbotron {
-            margin-bottom: 0;
-            font-family: "Arial Narrow";
-        }
-
-        /* Add a gray background color and some padding to the footer */
-        footer {
-            background-color: burlywood;
-            padding: 25px;
-        }
-    </style>
 </head>
 
 <body>
@@ -45,12 +21,12 @@
 <div>
     <div class="container text-center">
         <div class="media-center">
-            <img class="header-image is-logo-image" alt="logo image" src="/images/cadouri-handmade.jpg" style="width: 50%" >
-            <h1>Handmade By Cristina</h1>
+            <img class="header-image is-logo-image" alt="logo image" src="/images/cadouri-handmade.jpg" style="width: 80%" >
+            <h1 style="font-family: 'Comic Sans MS'">Handmade By Cristina</h1>
         </div>
-        <p style="text-emphasis-color: #a22e8d" align="center" >Creativitate, Culoare, Dar </p>
+        <h3 style="font-family: 'Comic Sans MS'" align="center" > Creativitate, Culoare, Cadou </h3>
     </div>
-</div>
+</div >
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -64,25 +40,27 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="/getHomePage">Despre mine</a></li>
-                <li><a href="/getProduct">Produse</a></li>
+                <li><a href="/homepage">Despre mine</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false"> Preturi </a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       Magazin
+                    </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                        <li><a class="dropdown-item" href="/getProduct/{categoryId}{}">Nume din fetru simple - 50RON</a>
-                        </li>
-                        <li><a class="dropdown-item" href="#">Nume din fetru personalizate 50RON + PERSONALIZAREA
-                            20RON</a></li>
-                        <li><a class="dropdown-item" href="#">Animalute crosetate 100RON </a></li>
-                        <li><a class="dropdown-item" href="#">Ghiozdan/rucsac - 150RON</a></li>
+                        <li><a class="dropdown-item" href="/getProduct/1">Nume din fetru simple</a></li>
+                        <li><a class="dropdown-item" href="/getProduct/2">Nume din fetru personalizate</a></li>
+                        <li><a class="dropdown-item" href="/getProduct/3">Animalute crosetate</a></li>
+                        <li><a class="dropdown-item" href="/getProduct/4">Ghiozdan/rucsac</a></li>
+                        <li><a class="dropdown-item" href="/getProduct">Toate produsele</a></li>
                     </ul>
-                <li><a href="#">Contact</a></li>
+                </li>
+                <li><a class="nav-link" href="/getPrice">Lista preturi</a></li>
+                <li><a class="nav-link" href="https://www.facebook.com/HandmadebyCristinafetru/">Facebook</a></li>
                 <li><a th:href="@{/add-category}" class="nav-link active" aria-current="page">Categorie noua</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                <li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Register </a></li>
+                <li><a href="/getOrder"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
                 <li><a class="nav-link" tabindex="-1" aria-disabled="true" th:href="@{/logout}">Logout</a></li>
             </ul>
         </div>
@@ -90,6 +68,8 @@
 </nav>
 
 <div class="container">
+    <h3 style="font-family: 'Comic Sans MS'"  align="center"> Categorii de produse din magazinul nostru: </h3>
+    <br>
     <div class="row">
         <div class="col-sm-4" th:each="category: ${categoryL}">
             <div class="Panel with panel-warning class">
@@ -113,6 +93,7 @@
 </div>
 
 <footer class="container-fluid text-center">
+    <a href="#section1">
     <p>Contact</p>
     <div>
         tel.0748678134
@@ -121,7 +102,7 @@
         <br>
         sediul: Cluj-Napoca
     </div>
-
+    </a>
     <form class="form-inline">Get deals:
         <input type="email" class="form-control" size="50" placeholder="Email Address">
         <button type="button" class="btn btn-danger">Sign Up</button>
@@ -129,79 +110,3 @@
 </footer>
 </body>
 </html>
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
--->
-<!--<div class="container">-->
-<!--    <a th:href="@{/add-categories}"><button type="button" class="btn btn-primary">Add Category</button></a>-->
-<!--<table>-->
-<!--    <tr>-->
-<!--        <th>Handmade category</th>-->
-<!--        <th> Action</th>-->
-<!--    </tr>-->
-<!--    <tr th:each="category: ${categories}">-->
-<!--        <td th:text="${category.categoryName}"></td>-->
-<!--        <td>-->
-<!--            <a th:href="@{/delete-category/{id}(id = ${category.categoryId)}"><button>Delete</button></a>-->
-<!--            <a th:href="@{/edit-category/{id}(id = ${category.categoryId})}"><button>Edit</button></a>-->
-<!--        </td>-->
-<!--    </tr>-->
-<!--</table>-->
-<!--</div>-->
-
-<!--<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">-->
-
-<!--    <div class="container-fluid">-->
-<!--        <a class="navbar-brand" href="#">Homemade by Cristina</a>-->
-<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"-->
-<!--                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--            <span class="navbar-toggler-icon"></span>-->
-<!--        </button>-->
-<!--        <div class="collapse navbar-collapse" id="navbarScroll">-->
-<!--            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="&#45;&#45;bs-scroll-height: 100px;">-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link active" aria-current="page" href="/login">Home</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="https://www.facebook.com/HandmadebyCristinafetru/">Facebook</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item dropdown">-->
-<!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"-->
-<!--                       data-bs-toggle="dropdown" aria-expanded="false">-->
-<!--                        Produsele noastre-->
-<!--                    </a>-->
-<!--                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">-->
-<!--                        <li><a class="dropdown-item" href="/getProduct/{categoryId}{}">Nume din fetru simple</a></li>-->
-<!--                        <li><a class="dropdown-item" href="#">Nume din fetru personalizate</a></li>-->
-<!--                        <li><a class="dropdown-item" href="#">Animalute crosetate</a></li>-->
-<!--                        <li><a class="dropdown-item" href="#">Ghiozdan/rucsac</a></li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--                <li class="nav-item dropdown">-->
-<!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"-->
-<!--                       data-bs-toggle="dropdown" aria-expanded="false">-->
-<!--                        Preturi-->
-<!--                    </a>-->
-<!--                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">-->
-<!--                        <li><a class="dropdown-item" href="/getProduct/{categoryId}{}">Nume din fetru simple - 50RON</a>-->
-<!--                        </li>-->
-<!--                        <li><a class="dropdown-item" href="#">Nume din fetru personalizate 50RON + PERSONALIZAREA-->
-<!--                            20RON</a></li>-->
-<!--                        <li><a class="dropdown-item" href="#">Animalute crosetate 100RON </a></li>-->
-<!--                        <li><a class="dropdown-item" href="#">Ghiozdan/rucsac - 150RON</a></li>-->
-<!--                    </ul>-->
-<!--                <li class="nav-item">-->
-<!--                    <a th:href="@{/add-category}" class="nav-link active" aria-current="page">Categorie noua</a>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--            </ul>-->
-<!--            <form class="d-flex">-->
-<!--                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
-<!--                <button class="btn btn-outline-success" type="submit">Search</button>-->
-<!--                <a class="nav-link" tabindex="-1" aria-disabled="true" th:href="@{/logout}">Logout</a>-->
-<!--            </form>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</nav>-->

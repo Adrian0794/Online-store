@@ -25,7 +25,7 @@ public class OrderControllers {
     public String getOrder(Model model) {
         List<OrderEntity> orderList = orderService.getAllOrders();
         model.addAttribute("orders", orderList);
-        return "order";
+        return "/orders.html";
     }
 
     @GetMapping(path = "addToCart/{userId}/{productId}")

@@ -64,7 +64,11 @@ public class CategoryControllers {
     }
     @GetMapping(path = "/homepage")
     public String getHomePage() {
-        return "/homepage";
+        return "/despre_mine.html";
+    }
+    @GetMapping(path = "/getPrice")
+    public String getPrice() {
+        return "/preturi.html";
     }
 
 }
