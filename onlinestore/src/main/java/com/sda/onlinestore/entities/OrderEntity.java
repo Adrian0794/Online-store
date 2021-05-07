@@ -12,9 +12,7 @@ public class OrderEntity {
     private double totalCost;
     private Integer dateOfOrder;
     private String status;
-//    private Status type;
-//
-//    public enum Status {NEW, HOLD, SHIPPED, DELIVERED, CLOSED;}
+
 
     @OneToOne
     private AddressEntity deliveryAdress;
@@ -81,12 +79,6 @@ public class OrderEntity {
     public void setStatus(String status) {
         this.status = status;
     }
-//    public Status getType() {
-//        return type;
-//    }
-//
-//    public void setType(Status type) {
-//        this.type = type;
-//    }
+
 }
 

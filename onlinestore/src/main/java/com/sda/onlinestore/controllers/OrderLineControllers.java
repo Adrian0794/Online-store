@@ -27,13 +27,13 @@ public class OrderLineControllers {
 
     }
 
-    //delete
+
     @GetMapping(path = "delete-orderline/{id}")
     public String deleteOrderLine(Model model, @PathVariable("id") Integer id) {
         orderLineService.deleteOrderLineById(id);
         return "redirect:/getOrderLine";
     }
-    //edit
+
     @PostMapping(path = "orderLine/edit")
     public String editOrderLine(@ModelAttribute OrderLineEntity orderLineToBeEdit) {
         orderLineService.editOrderline(orderLineToBeEdit);
