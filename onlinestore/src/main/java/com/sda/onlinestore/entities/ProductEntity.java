@@ -11,6 +11,7 @@ public class ProductEntity {
 
     private String title;
     private String description;
+    @Column(length = 10000)
     private String thumbnail;
     private double price;
 
