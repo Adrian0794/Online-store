@@ -11,6 +11,7 @@ public class CategoryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer categoryId;
     private String categoryName;
+    @Column(length = 10000)
     private String categoryImage;
 
     @OneToMany(mappedBy = "category")
