@@ -32,7 +32,9 @@
             </div>
             <select id="inputGroupSelect2" class="custom-select" th:field="${newProduct.producator.producatorId}">
                 <option selected th:value="null">Choose</option>
-                <  <option th:each="producator: ${producatori}" th:value="${producator.producatorId}" th:text="${producator.firstName}" ></option>
+                <
+                <option th:each="producator: ${producatori}" th:value="${producator.producatorId}"
+                        th:text="${producator.firstName}"></option>
             </select>
         </div>
 
@@ -42,7 +44,9 @@
             </div>
             <select id="inputGroupSelect3" class="custom-select" th:field="${newProduct.category.categoryId}">
                 <option selected th:value="null">Choose</option>
-                <  <option th:each="category: ${categories}" th:value="${category.categoryId}" th:text="${category.categoryName}" ></option>
+                <
+                <option th:each="category: ${categories}" th:value="${category.categoryId}"
+                        th:text="${category.categoryName}"></option>
             </select>
         </div>
     </table>

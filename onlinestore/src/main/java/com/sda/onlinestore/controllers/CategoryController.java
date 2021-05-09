@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
-public class CategoryControllers {
+public class CategoryController {
     @Autowired
     private CategoryService categoryService;
     @Autowired

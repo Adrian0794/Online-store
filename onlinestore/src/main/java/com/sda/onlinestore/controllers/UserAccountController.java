@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
-public class UserAccountControllers {
+public class UserAccountController {
 @Autowired
 private UserAccountService userAccountService;
 

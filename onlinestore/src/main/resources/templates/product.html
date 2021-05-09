@@ -42,12 +42,13 @@
 <div>
     <div class="container text-center">
         <div class="media-center">
-            <img class="header-image is-logo-image" alt="logo image" src="/images/cadouri-handmade.jpg" style="width: 50%" >
+            <img class="header-image is-logo-image" alt="logo image" src="/images/cadouri-handmade.jpg"
+                 style="width: 50%">
             <h1 style="font-family: 'Comic Sans MS'">Handmade By Cristina</h1>
         </div>
-        <h3 style="font-family: 'Comic Sans MS'" align="center" > Creativitate, Culoare, Cadou </h3>
+        <h3 style="font-family: 'Comic Sans MS'" align="center"> Creativitate, Culoare, Cadou </h3>
     </div>
-</div >
+</div>
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -63,7 +64,8 @@
             <ul class="nav navbar-nav">
                 <li><a href="/homepage">Despre mine</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
                         Magazin
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -73,7 +75,6 @@
                         <li><a class="dropdown-item" href="/getProduct/5">GHIOZDAN/RUCSAC</a></li>
                         <li><a class="dropdown-item" href="/getProduct/6">DECORATIUNI DE CRACIUN</a></li>
                         <li><a class="dropdown-item" href="/getProduct/7">MARTISOARE</a></li>
-                        <li><a class="dropdown-item" href="/getProduct">Toate produsele</a></li>
                     </ul>
                 </li>
                 <li><a class="nav-link" href="/getPrice">Lista preturi</a></li>
@@ -91,13 +92,14 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-4" th:each="product: ${products}">
+        <div class="col-sm-3" th:each="product: ${products}">
             <div class="Panel with panel-warning class">
                 <div class="panel-heading">
                     <h5 th:text="${product.title}">{product.title}</h5>
                 </div>
                 <div class="panel-body">
-                    <img th:src="@{${product.thumbnail}}" class="panel-body" style="width: 100%" alt="Image">
+                    <img th:src="@{${product.thumbnail}}" class="panel-body" style="width: 120%"
+                         alt="Image not available">
                     <h4 th:text="${product.price}">{product.price}</h4>
                     <h5 th:text="${product.description}">{product.description}</h5>
                 </div>
@@ -111,7 +113,6 @@
             </div>
         </div>
     </div>
-    </ul>
 </div>
 </body>
 </html>

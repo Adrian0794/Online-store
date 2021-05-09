@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
-public class  AddressControllers {
+public class AddressController {
     @Autowired
     private AddressService addressService;
 

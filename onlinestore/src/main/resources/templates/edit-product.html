@@ -11,7 +11,7 @@
         <tr>
             <td><label> ProductId</label>
             </td>
-            <td ><input readonly type="text" th:field="*{productId}" /></td>
+            <td><input readonly type="text" th:field="*{productId}"/></td>
         </tr>
         <tr>
             <td><label>Title</label></td>
@@ -37,7 +37,8 @@
             </div>
             <select id="inputGroupSelect2" class="custom-select" th:field="${productToBeEdit.producator.producatorId}">
                 <option selected th:value="null">Choose</option>
-                <option th:each="producator : ${producatori}" th:value="${producator.producatorId}" th:text="${producator.firstName}" ></option>
+                <option th:each="producator : ${producatori}" th:value="${producator.producatorId}"
+                        th:text="${producator.firstName}"></option>
             </select>
         </div>
 
@@ -47,7 +48,8 @@
             </div>
             <select id="inputGroupSelect3" class="custom-select" th:field="${productToBeEdit.category.categoryId}">
                 <option selected th:value="null">Choose</option>
-                <option th:each="category : ${categories}" th:value="${category.categoryId}" th:text="${category.categoryName}" ></option>
+                <option th:each="category : ${categories}" th:value="${category.categoryId}"
+                        th:text="${category.categoryName}"></option>
             </select>
         </div>
     </table>

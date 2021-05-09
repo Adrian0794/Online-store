@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
-public class ProductControllers {
+public class ProductController {
     @Autowired
     private ProductService productService;
 
