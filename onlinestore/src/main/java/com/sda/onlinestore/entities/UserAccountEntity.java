@@ -1,6 +1,7 @@
 package com.sda.onlinestore.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -63,5 +64,6 @@ public class UserAccountEntity {
     public void setRole(String role) {
         this.role = role;
     }
+
 }
 
