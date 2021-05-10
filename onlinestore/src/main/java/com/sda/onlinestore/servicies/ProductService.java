@@ -41,7 +41,7 @@ public class ProductService {
     }
 
 
-    public List<ProductEntity> getProductsByCategoryId(Integer idCategory){
+    public List<ProductEntity> getProductsByCategoryId(Integer idCategory) {
         return productRepository.findByCategoryCategoryId(idCategory);
     }
 

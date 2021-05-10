@@ -21,21 +21,22 @@ public class ProducatorController {
     @GetMapping(path = "getProducator")
     public String getProducator(Model model) {
         List<ProducatorEntity> producatorList = producatorService.producatorList();
-        model.addAttribute("producatori",producatorList);
+        model.addAttribute("producatori", producatorList);
         return "producator";
     }
 
     @GetMapping(path = "add-producator")
-    public String addProducatorPage(Model model){
+    public String addProducatorPage(Model model) {
         model.addAttribute("newProducator", new ProducatorEntity());
         return "add-producator";
     }
 
     @PostMapping(path = "producator/add")
-    public String addProducator(@ModelAttribute ProducatorEntity newProducator){
+    public String addProducator(@ModelAttribute ProducatorEntity newProducator) {
         producatorService.addProducator(newProducator);
         return "redirect:/getProducator";
     }
+
     //delete
     @GetMapping(path = "delete-producator/{id}")
     public String deleteProducator(Model model, @PathVariable("id") Integer id) {
