@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f5ec243-08d2-45fc-bcb8-ca1afec1daa0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Final project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onlinestore/src/main/resources/static/js/onlinestore_js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinestore/src/main/java/com/sda/onlinestore/entities/CategoryEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestore/src/main/java/com/sda/onlinestore/entities/CategoryEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinestore/src/main/resources/templates/add-categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestore/src/main/resources/templates/add-categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinestore/src/main/resources/templates/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestore/src/main/resources/templates/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/onlinestore/src/main/resources/templates/edit-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestore/src/main/resources/templates/edit-category.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onlinestore/src/main/java/com/sda/onlinestore/entities/AuthoritiesEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onlinestore/src/main/java/com/sda/onlinestore/repositories/AuthorityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinestore/src/main/java/com/sda/onlinestore/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestore/src/main/java/com/sda/onlinestore/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinestore/src/main/java/com/sda/onlinestore/entities/UserAccountEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestore/src/main/java/com/sda/onlinestore/entities/UserAccountEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinestore/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestore/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onlinestore/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/onlinestore/src/main/resources/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +39,7 @@
       <updated>1617516294782</updated>
       <workItem from="1617516296400" duration="18000" />
       <workItem from="1617623726460" duration="10000" />
+      <workItem from="1620670634313" duration="14000" />
     </task>
     <servers />
   </component>

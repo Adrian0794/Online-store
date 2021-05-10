@@ -24,15 +24,14 @@ public class AddressController {
         return "address-form";
     }
 
-    @GetMapping(path ="add-address")
-    public String addAddress(Model model){
+    @GetMapping(path = "add-address")
+    public String addAddress(Model model) {
         model.addAttribute("newAddress", new AddressEntity());
         return "add-address";
     }
 
     @PostMapping(path = "address/add")
-    public String addAddress(@ModelAttribute AddressEntity newAdress)
-    {
+    public String addAddress(@ModelAttribute AddressEntity newAdress) {
         addressService.addAddress(newAdress);
         return "rediresct:/getAddress";
     }

@@ -22,7 +22,7 @@ public class ProducatorService {
     }
 
     public List<ProducatorEntity> producatorList() {
-       return producatorRepository.findAll();
+        return producatorRepository.findAll();
     }
 
     public void getProducatorById(Integer id) {

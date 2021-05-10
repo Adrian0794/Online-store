@@ -3,7 +3,7 @@ package com.sda.onlinestore.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="address")
+@Table(name = "address")
 public class AddressEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

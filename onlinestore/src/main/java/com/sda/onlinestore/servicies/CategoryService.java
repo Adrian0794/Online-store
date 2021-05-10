@@ -36,7 +36,7 @@ public class CategoryService {
         categoryRepository.deleteById(id);
     }
 
-    public void editCategory(CategoryEntity editedCategory){
+    public void editCategory(CategoryEntity editedCategory) {
         categoryRepository.save(editedCategory);
     }
 

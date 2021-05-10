@@ -1,9 +1,10 @@
 package com.sda.onlinestore.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name="user")
+@Table(name = "user")
 public class UserAccountEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -63,5 +64,6 @@ public class UserAccountEntity {
     public void setRole(String role) {
         this.role = role;
     }
+
 }
 

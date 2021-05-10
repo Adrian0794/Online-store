@@ -4,10 +4,10 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="producator")
+@Table(name = "producator")
 public class ProducatorEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer producatorId;
     private String firstName;
     private String lastName;
